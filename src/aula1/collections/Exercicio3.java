@@ -1,14 +1,9 @@
 package aula1.collections;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Map;
 import java.util.Random;
 import java.util.Set;
-import java.util.random.RandomGenerator;
 
 import javax.swing.JOptionPane;
 
@@ -24,17 +19,21 @@ public class Exercicio3 {
 	 */
 	
 	public static void main(String[] args) {
-		Set<Integer> listaLimpa = new HashSet<Integer>();
-		ArrayList<Integer> lista = new ArrayList<Integer>();
-		String txt = "";
 		
+		ArrayList<Integer> lista = new ArrayList<Integer>();
+		Set<Integer> listaLimpa = new HashSet<Integer>();
 		Random numAleatorio = new Random();
+		String txt = "";	
+		
 		for(int i = 0; i < 50; i++) {
-			lista.add(numAleatorio.nextInt(20));
-			listaLimpa.add(numAleatorio.nextInt(20));
+			// 21, POIS O PRIMIERO NÚMERO É O 0
+			int num = numAleatorio.nextInt(21);
+			lista.add(num);
+			listaLimpa.add(num);
 		}
-		txt += lista;
-		JOptionPane.showMessageDialog(null, txt + ", " + "\n" + listaLimpa + ", \"");
+		txt += "Original: " + lista + "\n";
+        txt += "Sem repetição: " + listaLimpa;
+		JOptionPane.showMessageDialog(null, txt );
 	}
 
 
