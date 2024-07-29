@@ -2,14 +2,15 @@ package aula1.collections;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Random;
 
 import javax.swing.JOptionPane;
 
-public class Exercicio1 {
+public class Exercicio2 {
 	/*
 	 * Faça um programa que crie uma lista com 50 números inteiros aleatórios e
-	 * depois exiba-os ordenados do menor para o maior
+	 * depois exiba-os ordenados do maior para o menor
 	 */
 
 	public static void main(String[] args) {
@@ -20,8 +21,8 @@ public class Exercicio1 {
 		for (int i = 0; i < 50; i++) {
 			lista.add(numAleatorios.nextInt(100));
 		}
-		//MENOR PARA MAIOR
-		Collections.sort(lista);
+		//MAIOR PARA MENOR
+		Collections.sort(lista, Comparator.reverseOrder());
 		txt += lista;
 		JOptionPane.showMessageDialog(null, txt + ", ");
 	}
