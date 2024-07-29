@@ -1,0 +1,11 @@
+pacote  heterogêneo . jogadores ;
+
+ classe  pública Jogador {
+
+	String  nome ;
+	 camisa int ;
+	 Posição da corda ;
+	 Tempo de sequência ;
+	int  gols ;
+
+}

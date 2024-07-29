@@ -1,0 +1,124 @@
+pacote  heterogêneo . jogadores ;
+
+importar  java .util .ArrayList ;​​
+
+importar  javax . swing . JOptionPane ;
+
+ classe  pública PrincipalJogadores {
+
+	público  estático  vazio  principal ( String [] args ) {
+		ArrayList < Jogador > lista = new  ArrayList < Jogador >();
+		int  op = 0 ;
+		fazer {
+			op = menu ();
+			if ( op == 1 ) lista . add ( lerJogador ());
+			if ( op == 2 ) maisMenosGols ( lista , 2 );
+			if ( op == 3 ) maisMenosGols ( lista , 3 );
+			if ( op == 4 ) goleiroMaisGols ( lista );
+			if ( op == 5 ) camisasDez ( lista );
+		} enquanto ( op != 6 );
+	}
+
+	privado  estático  int  menu () {
+		String  m = "1 - Cadastrar \n "
+				+ "2 - Maior número de gols \n "
+				+ "3 - Menor número de gols \n "
+				+ "4 - Goleiros que fizeram gols \n "
+				+ "5 - Camisas 10 \n "
+				+ "6 - Sair" ;
+		retornar  Inteiro . parseInt ( JOptionPane . showInputDialog ( m ));
+	}
+
+
+
+	 mensagem privada estática  vazia  ( String txt ) { 
+		JOptionPane . showMessageDialog ( nulo , txt );
+	}
+
+	private  static  String  escreveJogador ( Jogador  j ) {
+		 retorne  "Nome: " + j . nome + " \n " +
+				"Camisa: " + j . camisa + " \n " +
+				"Posição: " + j . posição + " \n " +
+				"Tempo: " + j . tempo + " \n " +
+				"Gols: " + j . gols ;
+	}
+
+	private  static  void  maisMenosGols ( ArrayList < Jogador > lista , int  op ) {
+		Jogador  mais = lista . obter ( 0 );
+		Jogador  menos = lista . obter ( 0 );
+		para ( Jogador  j : lista ) {
+			if ( j . gols > mais . gols ) {
+				mais = j ;
+			}
+			if ( j . gols < menos . gols ) {
+				menos = j ;
+			}
+		}
+		se ( op == 2 ) {
+			msg ( escreveJogador ( mais ));
+		} outro {
+			msg ( escreveJogador ( menos ));
+		}
+	}
+
+	private  static  Jogador  lerJogador () {
+		Jogador  j = new  Jogador ();
+		j . nome = lerString ( "Nome" );
+		j . camisa = lerInt ( "Camisa" );
+		j . posicao = lerPosicao ();
+		j . tempo = lerString ( "Tempo" );
+		j . gols = lerInt ( "Gols" );
+		retornar  j ;
+	}
+
+	 String estática  privada lerString ( String txt ) {  
+		Sequência de caracteres  str = JOptionPane . showInputDialog ( txt );
+		se ( str . trim (). é igual a ( "" )) {
+			retornar ( lerString ( txt ));
+		}
+		retornar  str . toUpperCase ();
+	}
+
+	 String estática  privada lerPosicao () { 
+		Stringstr  = JOptionPane .​ showInputDialog ( "Posição" ). aparar (). toUpperCase ();
+		if ( str . equals ( "ATACANTE" ) || str . equals ( "ZAGUEIRO" ) || str . equals ( "GOLEIRO" )) {
+			retornar  str ;
+		}
+		retornar  lerPosicao ();
+	}
+
+	privado  estático  int  lerInt ( String  txt ) {
+		int  i = Inteiro . parseInt ( JOptionPane . showInputDialog ( txt ));
+		se ( i < 0 ) {
+			retornar ( lerInt ( txt ));
+		}
+		retornar  i ;
+	}
+
+	private  static  void  goleiroMaisGols ( ArrayList < Jogador > jogadores ) {
+		Jogador  goleiro = null ;
+		for ( Jogador  j : jogadores ) {
+			if ( j . posição . equals ( "GOLEIRO" )) {
+				se ( goleiro == nulo ) {
+					goleiro = j ;
+				}
+
+				if ( j . gols > goleiro . gols ) {
+					goleiro = j ;
+				}
+			}
+		}
+		msg ( escreveJogador ( goleiro ));
+	}
+
+	private  static  void  camisasDez ( ArrayList < Jogador > jogadores ) {
+		Sequência  ret = "" ;
+		for ( Jogador  j : jogadores ) {
+			se ( j . camisa == 10 ) {
+				ret += escreveJogador ( j )+ " \n \n " ;
+			}
+		}
+		mensagem ( ret );
+	}
+
+}
