@@ -21,7 +21,7 @@ public class Exercicio2 {
 		for (int i = 0; i < 50; i++) {
 			lista.add(numAleatorios.nextInt(100));
 		}
-		//MAIOR PARA MENOR
+		//MAIOR PARA MENOR USANDO COMPARATOR DO SORT
 		Collections.sort(lista, Comparator.reverseOrder());
 		txt += lista;
 		JOptionPane.showMessageDialog(null, txt + ", ");

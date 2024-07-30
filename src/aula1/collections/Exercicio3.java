@@ -19,21 +19,22 @@ public class Exercicio3 {
 	 */
 	
 	public static void main(String[] args) {
-		
+
 		ArrayList<Integer> lista = new ArrayList<Integer>();
-		Set<Integer> listaLimpa = new HashSet<Integer>();
+		Set<Integer> listaSemRepeticao = new HashSet<Integer>();
 		Random numAleatorio = new Random();
-		String txt = "";	
-		
-		for(int i = 0; i < 50; i++) {
+		String txt = "";
+
+		for (int i = 0; i < 50; i++) {
 			// 21, POIS O PRIMIERO NÚMERO É O 0
 			int num = numAleatorio.nextInt(21);
 			lista.add(num);
-			listaLimpa.add(num);
+			// CONVERSÃO DO ARRAYLIST PARA O HASHSET
+			listaSemRepeticao.add(num);
 		}
 		txt += "Original: " + lista + "\n";
-        txt += "Sem repetição: " + listaLimpa;
-		JOptionPane.showMessageDialog(null, txt );
+		txt += "Sem repetição: " + listaSemRepeticao;
+		JOptionPane.showMessageDialog(null, txt);
 	}
 
 

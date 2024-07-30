@@ -20,7 +20,7 @@ public class Exercicio1 {
 		for (int i = 0; i < 50; i++) {
 			lista.add(numAleatorios.nextInt(100));
 		}
-		//MENOR PARA MAIOR
+		//MENOR PARA MAIOR USANDO SORT
 		Collections.sort(lista);
 		txt += lista;
 		JOptionPane.showMessageDialog(null, txt + ", ");
