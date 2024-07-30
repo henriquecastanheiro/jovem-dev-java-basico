@@ -8,6 +8,9 @@ import java.util.Map;
 import javax.swing.JOptionPane;
 
 public class Exercicio6 {
+	
+	//==============================REFAZER==================================
+	
 	/*
 	 * Faça um programa que leia o nome de 5 alunos. 
 	 * Em seguida, leia 3 notas de cada um dos 5 alunos. 
