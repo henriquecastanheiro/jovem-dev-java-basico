@@ -17,7 +17,7 @@ public class Exercicio4 {
 	public static void main(String[] args) {
 		String frase = JOptionPane.showInputDialog("Digite uma frase: ").toLowerCase();
 
-		// Armazeno a contagem dos caracter com LinkedHashMap para garantir a ordem de inserção
+		// Armazeno a contagem dos caracter com LinkedHashMap utilziando a ordem de inserção
 		Map<Character, Integer> contCaracter = new LinkedHashMap<>();
 
 		for (int i = 0; i < frase.length(); i++) {

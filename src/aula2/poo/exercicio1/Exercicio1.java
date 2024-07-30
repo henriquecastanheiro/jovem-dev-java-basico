@@ -14,3 +14,4 @@ public class Exercicio1 {
 		JOptionPane.showMessageDialog(null, num);
 	}
 }
+

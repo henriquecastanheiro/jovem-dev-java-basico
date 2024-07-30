@@ -12,7 +12,7 @@ public class Exercicio2 {
 		 */
 		
 		String frase1 = JOptionPane.showInputDialog("Digite a 1ª Frase: ");
-		String frase2 = JOptionPane.showInputDialog("Digite a 1ª Frase: ");
+		String frase2 = JOptionPane.showInputDialog("Digite a 2ª Frase: ");
 
 		if(frase1.equalsIgnoreCase(frase2)) {
 			JOptionPane.showMessageDialog(null,
@@ -29,3 +29,4 @@ public class Exercicio2 {
 		
 	}
 }
+

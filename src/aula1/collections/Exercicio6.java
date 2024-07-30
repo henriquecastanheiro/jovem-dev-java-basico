@@ -2,64 +2,55 @@ package aula1.collections;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-
 import javax.swing.JOptionPane;
 
 public class Exercicio6 {
 	
-	//==============================REFAZER==================================
-	
-	/*
-	 * Faça um programa que leia o nome de 5 alunos. 
-	 * Em seguida, leia 3 notas de cada um dos 5 alunos. 
-	 * Armazene esses dados em um mapa, cuja chave é o nome do aluno. 
-	 * Quando o usuário terminar de digitar as notas, 
-	 * exiba o nome do aluno, suas notas e a média.
-	 */
-	
-	public static void main(String[] args) {
-		Map<String, List<Double>> alunosNotas = new HashMap<>();
+    public static void main(String[] args) {
+		
+    	/*
+		 * Faça um programa que leia o nome de 5 alunos. 
+		 * Em seguida, leia 3 notas de cada um dos 5 alunos.
+		 * Armazene esses dados em um mapa, cuja chave é o nome do aluno. 
+		 * Quando o usuário terminar de digitar as notas, 
+		 * exiba o nome do aluno, suas notas e a média.
+		 */
+    	
+        Map<String, ArrayList<Double>> mapa = new HashMap<>();
 
-		//Loop para ler o nome dos 5 alunos
-		for (int i = 0; i < 5; i++) {
-			String nome = JOptionPane.showInputDialog
-					("Digite o nome do aluno " + (i + 1) + ":");
+        int qtddAlunos = 5;
+        int qtddNotas = 3; 
 
-			// Criando uma lista para armazenar as 3 notas
-			List<Double> notas = new ArrayList<>();
-			// Loop para ler as 3 notas
-			for (int j = 0; j < 3; j++) {
-				String notaStr = JOptionPane.showInputDialog
-						("Digite a nota " + (j + 1) + " do aluno " + nome + ":");
-				double nota = Double.parseDouble(notaStr);
-				notas.add(nota);
-			}
-			// Armazenar os dados no mapa
-			alunosNotas.put(nome, notas);
-		}
+        for (int i = 0; i < qtddAlunos; i++) {
+            String nome = JOptionPane.showInputDialog("Digite o nome do aluno: " + (i + 1));
 
-		StringBuilder resultado = new StringBuilder("Notas dos Alunos:\n");
+            // Lista para armazenar as notas do aluno
+            ArrayList<Double> notas = new ArrayList<>();
+        
+            for (int j = 0; j < qtddNotas; j++) {
+                double nota = Double.parseDouble(JOptionPane.showInputDialog(
+                		"Digite a " + (j + 1) + " nota de " + nome));
+                notas.add(nota);
+            }
+            mapa.put(nome, notas);
+        }
 
-		for (Map.Entry<String, List<Double>> entry : alunosNotas.entrySet()) {
-			String nome = entry.getKey();
-			List<Double> notas = entry.getValue();
+        String txt = "Resultado de Notas\n\n";
+        for (String nome : mapa.keySet()) {
+            txt += "\nNome: " + nome + "\nNotas: " + mapa.get(nome) 
+            + "\nMédia: " + calculaMedia(mapa.get(nome)) + "\n\n";
+        }
+        
+        JOptionPane.showMessageDialog(null, txt);
+    }
 
-			// Calcular a média
-			double soma = 0;
-			for (double nota : notas) {
-				soma += nota;
-			}
-			double media = soma / notas.size();
-
-			resultado.append("Aluno: ").append(nome).append("\n");
-			resultado.append("Notas: ");
-			for (double nota : notas) {
-				resultado.append(nota).append(", ");
-			}
-			resultado.append("\nMédia: ").append(String.format("%.2f", media)).append("\n\n");
-		}
-		JOptionPane.showMessageDialog(null, resultado.toString());
-	}
+    // Método para calcular a média
+    public static double calculaMedia(ArrayList<Double> notas) {
+        double soma = 0;
+        for (Double nota : notas) {
+            soma += nota;
+        }
+        return soma / notas.size();
+    }
 }
