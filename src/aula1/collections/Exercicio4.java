@@ -2,7 +2,6 @@ package aula1.collections;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.stream.Collectors;
 import javax.swing.JOptionPane;
 
 public class Exercicio4 {
@@ -18,8 +17,7 @@ public class Exercicio4 {
 	public static void main(String[] args) {
 		String frase = JOptionPane.showInputDialog("Digite uma frase: ").toLowerCase();
 
-		// Armazeno a contagem dos caracter com LinkedHashMap para garantir a ordem de
-		// inserção
+		// Armazeno a contagem dos caracter com LinkedHashMap para garantir a ordem de inserção
 		Map<Character, Integer> contCaracter = new LinkedHashMap<>();
 
 		for (int i = 0; i < frase.length(); i++) {
@@ -28,15 +26,12 @@ public class Exercicio4 {
 			// Se o caracter já está na contagem adiciona +1
 			if (contCaracter.containsKey(caracter)) {
 				contCaracter.put(caracter, contCaracter.get(caracter) + 1);
+				
 			} else {
 				// Se não adiciona o caracter com contagem inicial 1
 				contCaracter.put(caracter, 1);
 			}
 		}
-		//Utilizado a API stream para tornar o código mais legível
-		String resultado = contCaracter.entrySet().stream().map(entry -> entry.getKey() + " - " + entry.getValue())
-				.collect(Collectors.joining(", "));
-		JOptionPane.showMessageDialog(null, "Frase: " + frase + "\n\n" + "Resultado: " + resultado);
-
+		JOptionPane.showMessageDialog(null, "Frase: " + frase + "\n\n" + "Resultado: " + contCaracter);
 	}
 }

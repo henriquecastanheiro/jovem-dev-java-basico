@@ -43,7 +43,7 @@ public class Exercicio5 {
 		intersecao.retainAll(conjunto2);
 
 		// Converte os conjuntos e a interseção de Set para List
-		// Pois com o Set, ordeno e com o List mostro...
+		// Pois com o Set, ordeno e com o List, mostro...
 		List<Integer> listaConjunto1 = new ArrayList<>(conjunto1);
 		List<Integer> listaConjunto2 = new ArrayList<>(conjunto2);
 		List<Integer> listaIntersecao = new ArrayList<>(intersecao);

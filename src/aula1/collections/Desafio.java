@@ -15,6 +15,9 @@ public class Desafio {
  *  O valor desse mapa é uma lista das palavras que contém as letras correspondentes. 
  *  No final, o programa deve mostrar, para cada letra, a lista de palavras em ordem crescente.
  */
+	
+//	=========================================REFAZER============================================
+	
 public static void main(String[] args) {
 	// Usei mapa para armazenar listas de palavras para cada letra
 	Map<Character, List<String>> mapa = new HashMap<>();
@@ -31,14 +34,15 @@ public static void main(String[] args) {
 		palavra = JOptionPane.showInputDialog("Digite uma palavra (ou 'fim' para encerrar):");
 
 		// Se a palavra for "fim" encerra
-		if (palavra.equalsIgnoreCase("fim")) {
+		if (palavra.equals("fim")) {
 			break;
 		}
 
 		// Verifica se a palavra contém cada uma das letras 
 		// Adiciona à lista de cada letra
 		for (char letra : letras) {
-			if (palavra.toLowerCase().contains(String.valueOf(letra))) {
+			// Converte o caracter para uma string
+			if (palavra.toLowerCase().contains(String.valueOf(letra))) { 
 				mapa.get(letra).add(palavra);
 			}
 		}
