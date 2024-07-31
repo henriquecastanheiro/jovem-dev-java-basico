@@ -14,12 +14,12 @@ public class Exercicio2 {
 	 */
 		dividirDoisNumeros();
 	}
-	public static Integer dividirDoisNumeros() {
+	public static String dividirDoisNumeros() {
 		try {
 			int numero1 = Integer.parseInt(JOptionPane.showInputDialog("Digite o 1ª Número: "));
-			int numero2 = Integer.parseInt(JOptionPane.showInputDialog("Digite o 1ª Número: "));
+			int numero2 = Integer.parseInt(JOptionPane.showInputDialog("Digite o 2ª Número: "));
 			int resultado = numero2/numero1;
-			return resultado;
+			return "A divisão de "+ numero1 +"/"+numero2 ": \n" +;
 		} catch (ZeroException e)  {
 			JOptionPane.showMessageDialog(null, "O segundo número não pode ser zero!");
 		} catch (Exception e) {
