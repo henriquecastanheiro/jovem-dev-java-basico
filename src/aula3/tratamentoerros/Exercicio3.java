@@ -46,7 +46,7 @@ public class Exercicio3 {
         //Na exceção IllegalStateException, o mapa esta em estado inválido
         try {
             Map<String, String> mapa = new HashMap<String, String>();
-            mapa.put("chave1", "Pedro");
+            mapa.put("Idade", "Maria");
             Iterator<Map.Entry<String, String>> it = mapa.entrySet().iterator();
             it.remove();
         } catch (IllegalStateException e) {
