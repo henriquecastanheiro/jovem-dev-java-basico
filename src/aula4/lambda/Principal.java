@@ -42,6 +42,6 @@ public class Principal {
 		lista.add(aluno5);
 		
 		lista.sort(Comparator.comparing(Aluno :: getDataNascimento));
-		System.out.println(lista);
+		System.out.println(lista);//Foreach
 	}
 }
