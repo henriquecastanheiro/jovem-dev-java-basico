@@ -30,21 +30,21 @@ public class ExemploStreamTerminal {
 //				filter(elemento -> elemento.startsWith("a")).
 //				findAny());
 		
-		Map<Integer, String> resultado = lista.stream().
-				filter(Objects::nonNull).
-				map(String::toUpperCase).
-				collect(Collectors.toMap(s -> s.length),));
-		
-		// IMPLEMENTAR RESULTADO DENTRO DE OUTRA LISTA
-		List<String> resultado = lista.stream().
-				filter(Objects::nonNull).
-				filter(elemento -> elemento.startsWith("a")).
-				collect(Collectors.toList()));
-		
-
-		System.out.println("***************************************");
-		System.out.println(lista);
-		System.out.println(resultado);
+//		Map<Integer, String> resultado = lista.stream().
+//				filter(Objects::nonNull).
+//				map(String::toUpperCase).
+//				collect(Collectors.toMap(s -> s.length),));
+//		
+//		// IMPLEMENTAR RESULTADO DENTRO DE OUTRA LISTA
+//		List<String> resultado = lista.stream().
+//				filter(Objects::nonNull).
+//				filter(elemento -> elemento.startsWith("a")).
+//				collect(Collectors.toList()));
+//		
+//
+//		System.out.println("***************************************");
+//		System.out.println(lista);
+//		System.out.println(resultado);
 	}
 
 	private String converteString(String s) {
