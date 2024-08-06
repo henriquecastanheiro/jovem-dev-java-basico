@@ -1,11 +1,18 @@
 package aula5.stream;
 
+<<<<<<< HEAD
 import java.util.Random;
 import java.util.stream.IntStream;
+=======
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+>>>>>>> c292632a5356809930a79285b0a10599afd1a6e7
 
 public class Exercicio1 {
 
 	public static void main(String[] args) {
+<<<<<<< HEAD
 	
 		/*
 		 * Faça um programa que cria uma lista com 50 
@@ -18,5 +25,26 @@ public class Exercicio1 {
 	int numeroFinal = 100;
 	IntStream ds = random.ints(streamSize, numeroInicial, numeroFinal);
 	ds.forEach(s -> System.out.print(s + ", "));
+=======
+		/*
+		 * Faça um programa que cria uma lista com 
+		 * 50 números aleatórios de 1 a 100 e
+		 * imprime a soma de todos os números
+		 */
+		List<Integer> lista = new ArrayList<>();
+		Random numAleatorios = new Random();
+		for (int i = 0; i < 50; i++) {
+			int num = numAleatorios.nextInt(100) + 1;
+			lista.add(num);
+		}
+		// Objetivo: Soma total dos números
+		int soma = lista.stream().mapToInt(Integer::intValue).sum();
+		lista.stream().sorted().forEach(s -> System.out.print(s + ", "));
+		System.out.println("\nA soma de todos os números é: " + soma);
+		// Extra: Soma dos números sem repeticão
+		int somaSemRepeticao = lista.stream().distinct().mapToInt(Integer::intValue).sum();
+		lista.stream().distinct().sorted().forEach(s -> System.out.print(s + ", "));
+		System.out.println("\nA soma dos números sem repetição é: " + somaSemRepeticao);
+>>>>>>> c292632a5356809930a79285b0a10599afd1a6e7
 	}
 }
