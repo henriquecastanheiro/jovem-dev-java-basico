@@ -22,9 +22,23 @@ public class Desafio {
 	public static void main(String[] args) {
 		
 		List<Evento> lista = new ArrayList<>();
+		Evento evento = null;
 		
-		Evento evento = Evento.criarEvento();
-        lista.add(evento);
+		String descricao = JOptionPane.showInputDialog("Digite a descrição do evento: ");
+
+		DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+		LocalDateTime dataHora = null;
+		while (dataHora == null) {
+			String strdataHora = JOptionPane
+					.showInputDialog("Digite a Data e Hora deste evento: (dd/MM/yyyy HH:mm)");
+			try {
+				dataHora = LocalDateTime.parse(strdataHora, format);
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null, "Data e Hora inválidas, Por favor tente novamente.");
+			}
+		}
+		
+		lista.add(evento);
         
         String strTipoEventoAgrupar = JOptionPane.showInputDialog("Digite o tipo de evento para agrupar (SOCIAL, LAZER, PROFISSIONAL, OUTROS):");
         TipoDeEvento tipoEventoAgrupar;

@@ -6,27 +6,27 @@ public enum DiaSemanaEnum {
 		public String isFimDeSemana() {
 			return "É final de semana";
 		}
-	}, SEGUNDA("Segunda-Feira") {
+	}, SEGUNDA("Segunda-feira") {
 		@Override
 		public String isFimDeSemana() {
 			return "Não é final de semana";
 		}
-	}, TERCA("Terça-Feira") {
+	}, TERCA("Terça-feira") {
 		@Override
 		public String isFimDeSemana() {
 			return "Não é final de semana";
 		}
-	}, QUARTA("Quarta-Feira") {
+	}, QUARTA("Quarta-feira") {
 		@Override
 		public String isFimDeSemana() {
 			return "Não é final de semana";
 		}
-	}, QUINTA("Quinta-Feira") {
+	}, QUINTA("Quinta-feira") {
 		@Override
 		public String isFimDeSemana() {
 			return "Não é final de semana";
 		}
-	}, SEXTA("Sexta-Feira") {
+	}, SEXTA("Sexta-feira") {
 		@Override
 		public String isFimDeSemana() {
 			return "Não é final de semana";
@@ -39,7 +39,6 @@ public enum DiaSemanaEnum {
 	};
 	
 	String nome;
-	public abstract String isFimDeSemana();
 	
 	private DiaSemanaEnum(String nome) {
 		this.nome = nome;
@@ -49,5 +48,11 @@ public enum DiaSemanaEnum {
 	public String getNome() {
 		return nome;
 	}
-		
+	
+	public abstract String isFimDeSemana();
+	
+	public String toString() {
+		String fimDeSemana = isFimDeSemana() ? "Sim" : "Não";
+		return String.format("%s - Fim de sema? %s", nome, isFimDeSemana());
+	}
 	}

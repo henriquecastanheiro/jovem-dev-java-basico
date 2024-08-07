@@ -37,6 +37,7 @@ public class Desafio {
 			lista.add(pessoa);
 		}
 		List<String> nomesFiltrados = new ArrayList<>();
+		
 		String resultado = lista.stream()
                 .filter(p -> comecaComVogal(p.getNome()) || p.nasceuEmAnoBissexto())
                 .map(Pessoa::getNome)
