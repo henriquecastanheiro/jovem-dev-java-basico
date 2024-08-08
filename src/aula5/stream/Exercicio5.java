@@ -1,6 +1,5 @@
 package aula5.stream;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,23 +16,20 @@ public class Exercicio5 {
 	 */
 	public static void main(String[] args) {
 	
-			List<String> lista = new ArrayList<>();
-
-			for(int i = 0; i < 10; i++) {
-				String nome = JOptionPane.showInputDialog(null, "Digite o nome da "+ (i+1) +" pessoa: ").toLowerCase();
-				lista.add(nome);
-			}
+	}
+		public String encontreBerto(List<String>lista) {
 	        try {
 	            Optional<String> resultado = lista.stream()
 	                    .filter(nome -> nome.toLowerCase().endsWith("berto"))
 	                    .findFirst();
 	            if (resultado.isPresent()) {
-	                JOptionPane.showMessageDialog(null, "Primeiro nome encontrado: " + resultado.get());
+	              JOptionPane.showMessageDialog(null, "Primeiro nome encontrado: " + resultado.get());
 	            } else {
 	                throw new ZeroBertoException("");
 	            }
 	        } catch (ZeroBertoException e) {
 	        	e.printStackTrace();
 	        }
+			return null;
 	    }
 	}

@@ -7,9 +7,8 @@ public class Pessoa {
 	String telefone;
 	LocalDate dataNascimento;
 
-	Pessoa(String nome, String telefone, LocalDate dataNascimento) {
+	public Pessoa(String nome, LocalDate dataNascimento) {
 		this.nome = nome;
-		this.telefone = telefone;
 		this.dataNascimento = dataNascimento;
 
 	}
