@@ -25,11 +25,11 @@ class OperacaoListasTest {
 		lista1.add(1);
 		lista1.add(10);
 		lista1.add(49);
-		lista1.add(100);
-		lista1.add(100);
-		lista1.add(100);
+		lista1.add(91);
+		lista1.add(60);
+		lista1.add(72);
 
-		assertEquals(100, operacaoLista.mediaNumerosMaiores50(lista1));
+		assertEquals(74.33, operacaoLista.mediaNumerosMaiores50(lista1));
 
 	}
 

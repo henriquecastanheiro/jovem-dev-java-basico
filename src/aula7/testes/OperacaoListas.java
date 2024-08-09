@@ -11,7 +11,7 @@ public class OperacaoListas {
 	 * você.
 	 */
 	Integer somarNumeros(List<Integer> lista) {
-		return lista.stream().distinct().mapToInt(Integer::intValue).sum();
+		return lista.stream().mapToInt(Integer::intValue).sum();
 	}
 
 	double mediaNumerosMaiores50(List<Integer> lista) {
