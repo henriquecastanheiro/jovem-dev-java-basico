@@ -39,9 +39,7 @@ public class Principal {
 			System.out.println(herois);
 			
 			for(Inimigo inimigos : pInimigos ) {
-				System.out.println(inimigos);
-						
-				
+				System.out.println(inimigos);			
 				
 				System.out.println(herois.getNome() + " vs " + inimigos.getNome() + "\n'Herói começa atacando' ");	
 				System.out.println("'Personagem jogou os dados!' \nNúmero do Dado é: " + dado);
@@ -50,8 +48,6 @@ public class Principal {
 				System.out.println((atqHeroi - inimigos.getDefesa()) - inimigos.getMaxHP());
 			
 			}while(inimigos.getMaxHP() < 0);
-			
-			
 				
 			if(herois.getAtaque() < inimigos.getDefesa())
 				System.out.println("Ataque fraco! \nInimigo pode atacar!");
